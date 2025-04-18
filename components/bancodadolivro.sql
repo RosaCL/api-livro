@@ -15,16 +15,18 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Copiando estrutura do banco de dados para api-livro
-CREATE DATABASE IF NOT EXISTS `api-livro` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `api-livro`;
+-- Copiando estrutura do banco de dados para registro_livro
+CREATE DATABASE IF NOT EXISTS `registro_livro` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `registro_livro`;
 
--- Copiando estrutura para tabela api-livro.registro
+-- Copiando estrutura para tabela registro_livro.registro
 CREATE TABLE IF NOT EXISTS `registro` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
   `autor` varchar(50) DEFAULT NULL,
   `genero` varchar(50) DEFAULT NULL,
+  `preco` varchar(50) DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   `delete_at` datetime DEFAULT NULL,

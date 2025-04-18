@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playwrite+CU:wght@100..400&display=swap');
+:root{
+    --title-font: "Bodoni Moda", serif;
+    --geral-font: "Lora", serif;
+    --logo-font:"Playwrite CU", cursive;
+    --bg: #FAF9F6;
+    --bg2: #fff;
+    --letra:#333333;
+    --black:#444;
+    --botao:#3A606E;
+    --delete:#9b0f0f;
+    --botao-hover:#88b9cafd;
+    --delete-hover:#e94c4ce1;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --border-hover: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    transition: all .2s linear;
+    transition: width none;
+    font-family: var(--geral-font);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--black);
+}
+body{
+    background: var(--bg);
+}
+.btn,
+.delete-btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: var(--bg2);    
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn{
+    background: var(--botao);
+}
+.delete-btn{
+    background: var(--delete);
+}
+.btn:hover{
+    background: var(--botao-hover);
+}
+.delete-btn:hover{
+    background: var(--delete-hover);
+}
+
+section{
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+
+.header{
+    background: var(--botao);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .flex .logo{
+    font-family: var(--logo-font);
+    font-size: 2rem;
+    font-weight: bolder;
+    color: var(--letra);
+    text-transform: none;
+}
+.header .flex .logo i{
+    color: var(--bg);
+}
+.header .flex .navbar{
+    text-align: center;
+    background: var(--botao);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+}
+.header .flex .navbar a{
+    font-size: 2.5rem;
+    padding: 2rem;
+    color: var(--bg2);
+    margin-left: 2rem;
+}
+.header .flex .navbar a:hover{
+    background: var(--botao-hover);
+}
+
+.header .flex .navbar a span{
+    font-size: 3rem;
+    padding: .2rem .5rem;
+    color: var(--letra);
+    background: var(--bg2);
+    border: var(--border);
+    margin-left: .5rem;
+    border-radius: .5rem;
+}
+
+#menu-btn{
+    font-size: 3rem;
+    color: var(--bg);
+    cursor: pointer;
+    display: none;
+}
+
+.add-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 15rem);
+}
+
+.add-product form{
+    background-color: var(--bg);
+    border-radius: .5rem;
+    border: var(--border);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    width: 50rem;
+}
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding: 3rem 2rem;
+    }
+}
+@media(max-width:768px){
+    html{
+        scroll-padding-top:0;
+    }
+    body{
+        padding-bottom: 6rem;
+    }  
+    #menu-btn{
+        display: inline-block;
+    }
+    
+    .header .navbar{
+        position: absolute;
+        top: 99%;
+        right: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: var(--botao);
+        border-top: .1rem solid rgba(255,255,255,.2);
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);transition: .2s linear;
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+    }
+    .header .navbar a{
+        display: block;
+        margin: 1rem 0;
+        padding: .5rem 0;
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
