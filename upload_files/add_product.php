@@ -1,5 +1,6 @@
 <?php
-include 'components/connect.php';
+include './components/connect.php';
+
 if(isset($_COOKIE['user_id'])){
     $user_id=$_COOKIE['user_id'];
 }else{
@@ -7,39 +8,32 @@ if(isset($_COOKIE['user_id'])){
 }
 
 if(isset($_POST['add_product'])){
-    $id=create_unique_id();
-    $name=$_POST['nome'];
-    $name=filter_var($name, FILTER_SANITIZE_STRING);
+    $id = create_unique_id();
+    $name = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
+    $autor = filter_var($_POST['autor'], FILTER_SANITIZE_STRING);
+    $genero = filter_var($_POST['genero'], FILTER_SANITIZE_STRING);
+    $preco = filter_var($_POST['preco'], FILTER_SANITIZE_STRING);
+    $quantidade = filter_var($_POST['quantidade'], FILTER_SANITIZE_STRING);
 
-    $autor=$_POST['autor'];
-    $autor=filter_var($autor, FILTER_SANITIZE_STRING);
+    $image = $_FILES['image']['name'];
+    $image = filter_var($image, FILTER_SANITIZE_STRING);
+    $ext = pathinfo($image, PATHINFO_EXTENSION);
+    $rename = create_unique_id().'.'.$ext;
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_size = $_FILES['image']['size'];
+    $image_folder = 'upload_files/'.$rename;
 
-    $genero=$_POST['genero'];
-    $genero=filter_var($genero, FILTER_SANITIZE_STRING);
-
-    $preco=$_POST['preco'];
-    $preco=filter_var($preco, FILTER_SANITIZE_STRING);
-
-    $quantidade=$_POST['quantidade'];
-    $quantidade=filter_var($quantidade, FILTER_SANITIZE_STRING);
-
-    $image=$_POST['image']['nome'];
-    $image=filter_var($image, FILTER_SANITIZE_STRING);
-
-    $ext=pathinfo($image, PATHINFO_EXTENSION);
-    $rename=create_unique_id().'.'.$ext;
-    $image_tmp_name=$_FILES['image']['tmp_name'];
-    $image_size=$_FILES['image']['size'];
-    $image_folder='upload_files/'.$rename;
-
-
-    if($image_size>2000000){
-        $warning_msg[]= 'Imagem muito grande!';
-    }else{
-        $insert_product=$conn->prepare("INSERT INTO `products`(id, name, autor, genero, preco, quantidade, image) VALUES(?,?,?,?,?,?,?)");
-        $insert_product->execute([$id,$name, $autor,$genero,$preco,$quantidade,$rename]);
-        $sucess_msg[]='Produto registrado!';
-        move_uploaded_file($image_tmp_name,$image_folder);
+    if($image_size > 2000000){
+        $warning_msg[] = 'Imagem muito grande!';
+    } else {
+        $insert_product = $conn->prepare("INSERT INTO `products`(id, name, autor, genero, preco, quantidade, image) VALUES(?,?,?,?,?,?,?)");
+        if ($insert_product->execute([$id, $name, $autor, $genero, $preco, $quantidade, $rename])) {
+            $sucess_msg[] = 'Produto registrado!';
+            move_uploaded_file($image_tmp_name, $image_folder);
+        } else {
+            $warning_msg[] = 'Erro ao registrar o produto.';
+            // Você pode adicionar logging de erro aqui para depuração
+        }
     }
 }
 ?>
@@ -50,15 +44,12 @@ if(isset($_POST['add_product'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add products</title>
+    <title>Filhas de D.Helena</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <!-- header -->
-    <?php include './api/components/header.php';?>
-    <!-- header -->
-    <!-- adicionar produto -->
+    <?php include 'components/header.php';?>
     <section class="add-product">
         <form action="" method="post" enctype="multipart/form-data">
             <h3>Detalhes do produto</h3>
@@ -74,17 +65,11 @@ if(isset($_POST['add_product'])){
             <input type="number" name="quantidade" required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite quantidade do livro">
             <p>Imagem<span>*</span></p>
             <input type="file" name="image" required accept="image/*" class="box">
-            <input type="submit" value="Sdicionar livro" class="btn" name="add_product">
+            <input type="submit" value="Adicionar livro" class="btn" name="add_product">
         </form>
     </section>
-    <!-- adicionar produto -->
-    <!-- ALERT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <!-- ALERT -->
-    <!-- JS -->
     <script src="../js/index.js"></script>
-    <!-- JS -->
-
     <?php include './api/components/alert.php';?>
 </body>
 </html>

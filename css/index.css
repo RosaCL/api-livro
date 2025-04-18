@@ -28,19 +28,24 @@
     transition: width none;
     font-family: var(--geral-font);
 }
+*::selection{
+    background-color: var(--botao);
+    color: var(--bg2);
+}
 html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-padding-top: 5rem;
     scroll-behavior: smooth;
 }
-html::-webkit-scrollbar{
+*::-webkit-scrollbar{
+    height: .5rem;
     width: 1rem;
 }
-html::-webkit-scrollbar-track{
+*::-webkit-scrollbar-track{
     background: transparent;
 }
-html::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb{
     background: var(--black);
 }
 body{
@@ -75,6 +80,22 @@ section{
     margin: 0 auto;
 }
 
+.heading{
+    font-size: 3rem;
+    color: var(--letra);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.empty{
+    background-color: var(--bg2);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    color: var(--delete);
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    border-radius: .5rem;
+}
 
 .header{
     background: var(--botao);
@@ -175,9 +196,50 @@ section{
 .add-product form p span{
     color: var(--delete);
 }
-
-
-
+.product .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,35rem);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.product .box-container .box{
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: .5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+.product .box-container .box .image{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+.product .box-container .box .name{
+    font-size: 2rem;
+    color: var(--letra);
+    padding: .5rem 0;
+}
+.product .box-container .box .flex{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+.product .box-container .box .flex .price{
+    font-size: 1.8rem;
+    color: var(--delete);
+    margin-right: auto;
+}
+.product .box-container .box .flex .qty{
+    font-size: 1.8rem;
+    color: var(--black);
+    padding: .5rem 1rem;
+    border: var(--border);
+    border-radius: .5rem;
+    width: 6.5rem;
+}
 @media(max-width:991px){
     html{
         font-size: 55%;
@@ -222,5 +284,8 @@ section{
 @media(max-width:450px){
     html{
         font-size: 50%;
+    }
+    .product .box-container{
+        grid-template-columns:1fr;
     }
 }
