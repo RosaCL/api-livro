@@ -114,7 +114,7 @@ section{
     font-family: var(--logo-font);
     font-size: 2rem;
     font-weight: bolder;
-    color: var(--letra);
+    color: var(--bg);
     text-transform: none;
 }
 .header .flex .logo i{
@@ -122,7 +122,7 @@ section{
 }
 .header .flex .navbar{
     text-align: center;
-    background: var(--botao);
+    background: var(--bg);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -224,7 +224,7 @@ section{
 .product .box-container .box .flex{
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1rem 0;
 }
 .product .box-container .box .flex .price{
@@ -240,6 +240,47 @@ section{
     border-radius: .5rem;
     width: 6.5rem;
 }
+
+.product .box-container .box .flex .fa-edit{
+    background-color: var(--delete-hover);
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--bg2);
+    height: 3.5rem;
+    width: 4.5rem;
+}
+.product .box-container .box .flex .fa-edit:hover{
+    background-color: var(--black);
+}
+.product .box-container .box .sub-total{
+    font-size: 1.7rem;
+    color: var(--black);
+    padding-bottom: 1rem;
+    padding-top: .5rem;
+}
+
+.product .grand-total{
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    background-color: var(--bg);
+    padding: 2rem;
+}
+.product .grand-total p{
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+.product .grand-total p span{
+    color: var(--delete);
+}
+
+
+/* responsividade */
 @media(max-width:991px){
     html{
         font-size: 55%;
