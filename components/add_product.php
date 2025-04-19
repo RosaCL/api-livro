@@ -78,6 +78,7 @@ $conn = new PDO($db_name, $db_user_name, $db_user_pass);
                 }
             }
         }
+        echo '$name $autor $genero $preco $quantidade';
     ?>
 
         </div>
