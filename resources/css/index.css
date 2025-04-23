@@ -75,6 +75,10 @@ body{
     background: var(--delete-hover);
 }
 
+.section{
+    margin: 2rem;
+    padding: 2rem;
+}
 
 .heading{
     font-size: 3rem;
