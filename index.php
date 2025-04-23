@@ -2,7 +2,7 @@
 require 'functions.php';
 $produtos = listarProdutos();
 ?>
-</table>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
