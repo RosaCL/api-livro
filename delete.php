@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 
-$id = $_GET['id'];
-deletarProduto($id);
+$nome = $_GET['nome'];
+deletarProduto($nome);
 header("Location: index.php");
 exit;

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="menu-btn" class="fas fa-bars"></div>  
 </header>
     <section class="add-product">
-        <form action="#" method="post">
+        <form method="post">
             <h3>Detalhes do produto</h3>            
             <label for="nome">Nome:</label>
             <input type="text" name="nome" required maxlength="50" class="box" placeholder="Digite o nome do livro">

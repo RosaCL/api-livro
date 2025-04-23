@@ -21,37 +21,36 @@ $produtos = listarProdutos();
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>  
 </header>
-    <section class="add-product">
-        <div class="box">
-            <h1 class="heading"> Produtos Cadastrados</h1>          
-
-                <table class="tabela" border="1" cellpadding="5">
-            
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Autor</th>
-                    <th>Gênero</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                </tr>
-                <?php foreach ($produtos as $produto): ?>
-                    <tr>
-                        <td><?= $produto['id'] ?></td>
-                        <td><?= $produto['nome'] ?></td>
-                        <td><?= $produto['autor'] ?></td>
-                        <td><?= $produto['genero'] ?></td>
-                        <td><?= $produto['preco']?></td>
-                        <td><?= $produto['quantidade']?></td>
-                        <td>
-                            <a class="btn" href="update.php?id=<?= $produto['nome'] ?>">Editar</a> 
-                            <a class="delete-btn" href="delete.php?id=<?= $produto['nome'] ?>" onclick="return confirm('Deseja deletar?')">Deletar</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        </div>
-    </section>
+<section class="product">
+    <div class="box">
+    <h1 class="heading"> Produtos Cadastrados</h1>
+    <table cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Autor</th>
+            <th>Gênero</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+        </tr>
+        <?php foreach ($produtos as $produto): ?>
+            <tr>
+            <td><?= $produto['id'] ?></td>
+            <td><?= $produto['nome'] ?></td>
+            <td><?= $produto['autor'] ?></td>
+            <td><?= $produto['genero'] ?></td>
+            <td><?= $produto['preco']?></td>
+            <td><?= $produto['quantidade']?></td>
+            <td>
+                <a class="btn" href="update.php?id=<?= $produto['nome'] ?>">Editar</a> 
+                <a class="delete-btn" href="delete.php?id=<?= $produto['nome'] ?>" onclick="return confirm('Deseja deletar?')">Deletar</a>
+            </td>
+            </tr>
+            <?php endforeach; ?>
+    </table>
+    </div>
+</section>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="./resources/js/index.js"></script>
     
