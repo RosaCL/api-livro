@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="#" class="logo">Filhas de D.Helena</a>
         <nav class="navbar">
             <a href="./create.php">Adicionar produtos</a>
-            <a href="#">Todos os produtos</a>           
+            <a href="./index.php">Todos os produtos</a>           
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>  
 </header>
@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="autor" required maxlength="50" class="box" placeholder="Digite o autor do livro">
             <label for="genero">Gênero:</label>
             <input type="text" name="genero" required maxlength="50" class="box" placeholder="Digite o gênero do livro">
-            <label for="preco">preco:</label>
+            <label for="preco">Preço:</label>
             <input type="number" name="preco" required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite o preço do livro">
-            <p>Quantidade<span>*</span></p>
+            <label for="quantidade">Quantidade:</label>
             <input type="number" name="quantidade" required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite quantidade do livro">           
             <input type="submit" value="Adicionar livro" class="btn" name="add_product">
         </form>
