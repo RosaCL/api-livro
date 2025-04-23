@@ -86,16 +86,7 @@ section{
     margin-bottom: 2rem;
     text-align: center;
 }
-.empty{
-    background-color: var(--bg2);
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    color: var(--delete);
-    font-size: 1.8rem;
-    text-align: center;
-    width: 100%;
-    border-radius: .5rem;
-}
+
 
 .header{
     position: fixed;
@@ -173,94 +164,12 @@ section{
 .add-product form .box:hover{
     border: var(--border-hover);
 }
-.add-product form p{
+.add-product form label{
     padding-top: 1rem;
     font-size: 1.6rem;
     color: var(--black);
 }
-.add-product form p span{
-    color: var(--delete);
-}
-.product .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,35rem);
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1.5rem;
-}
-.product .box-container .box{
-    background-color: var(--bg);
-    padding: 2rem;
-    border-radius: .5rem;
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-}
-.product .box-container .box .image{
-    height: 20rem;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 1.5rem;
-}
-.product .box-container .box .name{
-    font-size: 2rem;
-    color: var(--letra);
-    padding: .5rem 0;
-}
-.product .box-container .box .flex{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-}
-.product .box-container .box .flex .price{
-    font-size: 1.8rem;
-    color: var(--delete);
-    margin-right: auto;
-}
-.product .box-container .box .flex .qty{
-    font-size: 1.8rem;
-    color: var(--black);
-    padding: .5rem 1rem;
-    border: var(--border);
-    border-radius: .5rem;
-    width: 6.5rem;
-}
-
-.product .box-container .box .flex .fa-edit{
-    background-color: var(--delete-hover);
-    border-radius: .5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--bg2);
-    height: 3.5rem;
-    width: 4.5rem;
-}
-.product .box-container .box .flex .fa-edit:hover{
-    background-color: var(--black);
-}
-.product .box-container .box .sub-total{
-    font-size: 1.7rem;
-    color: var(--black);
-    padding-bottom: 1rem;
-    padding-top: .5rem;
-}
-
-.product .grand-total{
-    max-width: 50rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    border: var(--border);
-    background-color: var(--bg);
-    padding: 2rem;
-}
-.product .grand-total p{
-    padding-bottom: 1rem;
-    font-size: 2rem;
-    color: var(--black);
-}
-.product .grand-total p span{
+.add-product form label{
     color: var(--delete);
 }
 

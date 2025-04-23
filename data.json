@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "nome": "outra biografia",
+        "autor": "Rita Lee",
+        "genero": "Biografia",
+        "preco": "40,50",
+        "quantidade": 10,
+        "created_at": "2025-04-17 15:51:12",
+        "update_at": "2025-04-17 15:51:14",
+        "delete_at": null
+    },
+    {
+        "id": 2,
+        "nome": "Torto Arado",
+        "autor": "Itamar Vieira ",
+        "genero": "Drama",
+        "preco": "35,99",
+        "quantidade": 15,
+        "created_at": "2025-04-17 15:52:21",
+        "update_at": "2025-04-17 15:52:23",
+        "delete_at": null
+    },
+    {
+        "id": 3,
+        "nome": "A malta indom\u00e1vel",
+        "autor": "Ale Santos",
+        "genero": "Infantojuvenil",
+        "preco": "25,00",
+        "quantidade": 10,
+        "created_at": "2025-04-17 15:53:40",
+        "update_at": "2025-04-17 15:53:41",
+        "delete_at": null
+    }
+]
