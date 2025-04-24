@@ -39,11 +39,11 @@ $produtos = listarProdutos();
             <td><?= $produto['nome'] ?></td>
             <td><?= $produto['autor'] ?></td>
             <td><?= $produto['genero'] ?></td>
-            <td><?= $produto['preco']?></td>
+            <td>R$ <?= $produto['preco']?></td>
             <td><?= $produto['quantidade']?></td>
             <td>
-                <a class="btn" href="update.php?id=<?= $produto['nome'] ?>">Editar</a> 
-                <a class="delete-btn" href="delete.php?id=<?= $produto['nome'] ?>" onclick="return confirm('Deseja deletar?')">Deletar</a>
+                <a class="btn" href="update.php?id=<?= $produto['id'] ?>">Editar</a> 
+                <a class="delete-btn" href="delete.php?id=<?= $produto['id'] ?>" onclick="return confirm('Deseja deletar?')">Deletar</a>
             </td>
             </tr>
             <?php endforeach; ?>
