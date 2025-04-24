@@ -1,8 +1,13 @@
 <?php
 require 'functions.php';
 
-$nome = $_GET['nome'];
-$nome = buscarProduto($nome);
+$id = $_GET['id'] ?? null;
+$produto = buscarProduto($id);
+
+if(!$produto){
+    echo "<h3>Produto não encontrado!</h3>";
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     atualizarProduto($id, $_POST['nome'], $_POST['autor'], $_POST['genero'],$_POST['preco'], $_POST['quantidade']);
@@ -33,16 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form  method="post">
             <h3>Detalhes do produto</h3>            
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" required maxlength="50" class="box" placeholder="Digite o nome do livro">
+            <input type="text" name="nome" required maxlength="50" class="box" placeholder="Digite o nome do livro" value="<?= $produto['nome'] ?>">
             <label for="autor">Autor:</label>            
-            <input type="text" name="autor" required maxlength="50" class="box" placeholder="Digite o autor do livro">
+            <input type="text" name="autor" required maxlength="50" class="box" placeholder="Digite o autor do livro" value="<?= $produto['autor'] ?>">
             <label for="genero">Gênero:</label>
-            <input type="text" name="genero" required maxlength="50" class="box" placeholder="Digite o gênero do livro">
+            <input type="text" name="genero" required maxlength="50" class="box" placeholder="Digite o gênero do livro" value="<?= $produto['genero'] ?>">
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" step="0.010"  required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite o preço do livro">
+            <input type="number" name="preco" step="0.010"  required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite o preço do livro" value="<?= $produto['preco'] ?>">
             <label for="quantidade">Quantidade:</label>
-            <input type="number" name="quantidade" required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite quantidade do livro">           
-            <input type="submit" value="Adicionar livro" class="btn" name="add_product">
+            <input type="number" name="quantidade" required maxlength="10" min="0" max="9999999999" class="box" placeholder="Digite quantidade do livro" value="<?= $produto['quantidade'] ?>">           
+            <button class="btn" type="submit">Atualizar</button>
         </form>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
