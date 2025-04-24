@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $db = 'registro_livro';
-$user = 'mrcl';
-$pass = 'P67a31kEJI4eveGECAV15iJEbiriHI';
+$user = 'root';
+$pass = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);

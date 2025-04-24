@@ -13,10 +13,10 @@ function listarProdutos() {
     return $produtos;
 }
 
-function cadastrarProduto($nome, $autor, $genero, $preco, $quantidade) {
+function cadastrarProduto($nome, $autor, $genero,$preco, $quantidade ) {
     global $pdo;
-    $stmt = $pdo->prepare("INSERT INTO registro (nome, autor, genero, preco, quantidade) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$nome, $autor, $genero, $preco, $quantidade]);
+    $stmt = $pdo->prepare("INSERT INTO registro (nome, autor, genero, preco, quantidade) VALUES (?, ?, ?, ?,?)");
+    $stmt->execute([$nome, $autor, $genero,$preco, $quantidade]);
 }
 
 function buscarProduto($id) {
@@ -26,10 +26,10 @@ function buscarProduto($id) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function atualizarProduto($id,$nome, $autor, $genero, $preco, $quantidade) {
+function atualizarProduto($id, $nome, $autor, $genero,$preco, $quantidade,) {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE registro SET nome = ?, autor =?, genero=?, preco=?, quantidade=? WHERE id = ?");
-    $stmt->execute([$nome, $autor, $genero, $preco, $quantidade, $id]);
+    $stmt = $pdo->prepare("UPDATE registro SET nome = ?, autor = ?, genero = ?, preco = ?, quantidade = ? WHERE id = ?");
+    $stmt->execute([$id, $nome, $autor, $genero,$preco, $quantidade]);
 }
 
 function deletarProduto($id) {

@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 
-$id = $_GET['id'] ?? null;
+$id = $_GET['id'];
 $produto = buscarProduto($id);
 
 if(!$produto){

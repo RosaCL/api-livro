@@ -4,43 +4,21 @@
         "nome": "outra biografia",
         "autor": "Rita Lee",
         "genero": "Biografia",
-        "preco": "40,50",
-        "quantidade": 10,
-        "created_at": "2025-04-17 15:51:12",
-        "update_at": "2025-04-17 15:51:14",
-        "delete_at": null
+        "preco": 40.99,
+        "quantidade": 15,
+        "created_at": "2025-04-24 18:43:29",
+        "updated_at": "2025-04-24 18:43:31",
+        "deleted_at": null
     },
     {
         "id": 2,
         "nome": "Torto Arado",
-        "autor": "Itamar Vieira ",
+        "autor": "Itamar Vieira",
         "genero": "Drama",
-        "preco": "35,99",
-        "quantidade": 15,
-        "created_at": "2025-04-17 15:52:21",
-        "update_at": "2025-04-17 15:52:23",
-        "delete_at": null
-    },
-    {
-        "id": 3,
-        "nome": "A malta indom\u00e1vel",
-        "autor": "Ale Santos",
-        "genero": "Infantojuvenil",
-        "preco": "25,00",
-        "quantidade": 10,
-        "created_at": "2025-04-17 15:53:40",
-        "update_at": "2025-04-17 15:53:41",
-        "delete_at": null
-    },
-    {
-        "id": 4,
-        "nome": "Ainda estou aqui",
-        "autor": "Marcelo Rubens Paiva",
-        "genero": "Drama",
-        "preco": "49.99",
-        "quantidade": 20,
-        "created_at": null,
-        "update_at": null,
-        "delete_at": null
+        "preco": 39.99,
+        "quantidade": 8,
+        "created_at": "2025-04-24 18:44:17",
+        "updated_at": "2025-04-24 18:44:18",
+        "deleted_at": null
     }
 ]
