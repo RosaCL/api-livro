@@ -2,7 +2,7 @@
 require 'functions.php';
 
 $nome = $_GET['nome'];
-$produto = buscarProduto($nome);
+$nome = buscarProduto($nome);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     atualizarProduto($id, $_POST['nome'], $_POST['autor'], $_POST['genero'],$_POST['preco'], $_POST['quantidade']);
