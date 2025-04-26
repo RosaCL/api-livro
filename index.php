@@ -16,7 +16,7 @@ $produtos = listarProdutos();
 <header class="header">    
         <a href="#" class="logo">Filhas de D.Helena</a>
         <nav class="navbar">
-        <a href="./create.php">Adicionar produtos</a>
+        <a href="./create.php">Adicionar produtos</a>        
         <a href="./index.php">Todos os produtos</a>          
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>  
