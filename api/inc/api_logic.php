@@ -32,7 +32,14 @@ class api_logic
         return method_exists($this, $this->endpoint);
     }
 
-
+public function status()
+{
+    return[
+        'status'=>'SECESS',
+        'message'=>'API is running ok!',
+        'results'=>null
+    ];
+}
 
     //public function get_all_clients(): Este método público é responsável por buscar todos os clientes de um banco de dados.
     public function get_all_clients()

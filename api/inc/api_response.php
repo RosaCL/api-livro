@@ -24,11 +24,15 @@ public function set_method($method)
     $this->data['method']=$method;
 }
 
-public function set_endpoint($endpoint)
+public function get_method()
 {
-    $this->data['endpoint']=$endpoint;
+    return $this->data['method'];
 }
 
+public function set_endpoint($endpoint)
+{
+    $this->data['endpoint'] = $endpoint;
+}
 public function get_endpoint()
 {
     return $this->data['endpoint'];
@@ -36,7 +40,7 @@ public function get_endpoint()
 
 public function add_do_data($key, $value)
 {
-    $this->data[$key=$value];
+    $this->data[$key]=$value;
 }
 
 public function api_request_error($message='')
@@ -46,7 +50,14 @@ public function api_request_error($message='')
         'message'=>$message,
         'results'=>null
     ];
-    $this->data['dats']=$data_error;
+    $this->data['data']=$data_error;
+    $this->send_response();
+}
+
+public function send_api_status()
+{
+    $this->data['status']='SUCESS';
+    $this->data['message']='API is running ok!';
     $this->send_response();
 }
 
