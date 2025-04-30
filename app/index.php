@@ -1,6 +1,6 @@
 <?php
-require 'functions.php';
-$produtos = listarProdutos();
+require_once('inc/config.php');
+require_once('./app/inc/api_functions.php')
 ?>
 
 <!DOCTYPE html>
