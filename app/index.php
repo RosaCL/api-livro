@@ -16,7 +16,8 @@ require_once('inc/api_functions.php')
 <header class="header">    
         <a href="#" class="logo">Filhas de D.Helena</a>
         <nav class="navbar">             
-        <a href="#product">Todos os produtos</a>          
+        <a href="#product">Produtos cadastrados</a>          
+        <a href="#clientes">Clientes cadastrados</a>          
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>  
 </header>

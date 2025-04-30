@@ -166,7 +166,44 @@ body{
     margin: 4px;
     padding: 4px;
 }
+.clientes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 15rem);
+}
 
+.clientes .box table {
+    margin: 1rem 0;
+    padding: 1.4rem;
+    border-radius: .5rem;
+    background-color: var(--bg2);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    font-size: 1.8rem;
+    color: var(--letra);
+    width: 100%;
+    text-align: center;
+}
+.clientes .box:hover table{
+    border: var(--border-hover);
+}
+
+.clientes .box table tr th{
+    color: var(--botao);
+    width: fit-content;   
+    margin: 4px;
+    padding: 4px;
+    border: var(--border);
+}
+.clientes .box table tr td{
+    color: var(--botao);
+    width: fit-content;
+    border: var(--border);
+    color: var(--letra);
+    margin: 4px;
+    padding: 4px;
+}
 
 
 
