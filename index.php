@@ -49,9 +49,6 @@ $produtos = listarProdutos();
             <?php endforeach; ?>
     </table>
     </div>
-</section>
-    
-
-    
+</section> 
 </body>
 </html>
