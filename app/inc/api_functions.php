@@ -26,4 +26,32 @@ function api_request($endpoint, $method = 'GET', $variables =[]){
     $response=curl_exec($client);
     return json_decode($response,true);
 }
+
+function buscarProduto($id) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM product WHERE id_product = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+    function atualizarProduto($id, $nome, $autor, $genero, $preco, $quantidade) {
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE produtos SET nome = ?, autor = ?, genero = ?, preco= ?, quantidade = ? WHERE id_product = ?");
+    $stmt->execute([$nome, $autor, $genero ,$preco, $quantidade, $id]);
+}
+
+    function cadastrarProduto($nome, $autor, $genero, $preco, $quantidade) {
+    global $pdo;
+    $stmt = $pdo->prepare("INSERT INTO produtos (nome, autor, genero, preco, quantidade) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute([$nome, $autor, $genero, $preco, $quantidade]);
+}
+
+    function deletarProduto($id) {
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM product WHERE id_product = ?");
+    $stmt->execute([$id]);
+}
+
+
+
 ?>

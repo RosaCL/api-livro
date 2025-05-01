@@ -41,6 +41,7 @@ public function status()
     ];
 }
 
+    
     //public function get_all_clients(): Este método público é responsável por buscar todos os clientes de um banco de dados.
     public function get_all_clients()
     {

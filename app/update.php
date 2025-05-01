@@ -1,7 +1,21 @@
 <?php
 require_once('inc/config.php');
 require_once('inc/api_functions.php');
+
+$id=$_GET['id_product'] ?? null;
+$product = buscarProduto($id);
+
+if(!$product){
+    echo "<h3> Produto não encontrado!</h3>";
+    exit;
+}
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    atualizarProduto($id, $_POST['nome'], $_POST ['autor'],$_POST ['genero'], $_POST ['preco'], $_POST ['quantidade']);
+    header("Location: index.php");
+    exit;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,8 +31,7 @@ require_once('inc/api_functions.php');
         <a href="#" class="logo">Filhas de D.Helena</a>
         <nav class="navbar">             
         <a href="#product">Produtos cadastrados</a>          
-        <a href="#clientes">Clientes cadastrados</a> 
-        <a href="./create.php">Adicionar produto</a>         
+        <a href="#clientes">Clientes cadastrados</a>          
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>  
 </header>
