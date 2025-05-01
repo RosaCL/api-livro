@@ -42,7 +42,7 @@ require_once('inc/api_functions.php')
                 <td><?=$product['nome']?></td>
                 <td><?=$product['autor']?></td>
                 <td><?=$product['genero']?></td>
-                <td>R$<?=$product['preco']?></td>
+                <td>R$ <?=$product['preco']?></td>
                 <td><?=$product['quantidade']?></td>
                 <td><?=$product['created_at']?></td>
             </tr>
