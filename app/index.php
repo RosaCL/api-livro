@@ -1,4 +1,4 @@
-?php
+<?php
 require_once('inc/config.php');
 require_once('inc/api_functions.php')
 ?>
@@ -38,7 +38,7 @@ require_once('inc/api_functions.php')
             $results = api_request('get_all_products', 'GET');?>
             <?php foreach($results['data']['results'] as $product) :?>
             <tr>
-                <td><?=$product['id_produto']?></td>
+                <td><?=$product['id_product']?></td>
                 <td><?=$product['nome']?></td>
                 <td><?=$product['autor']?></td>
                 <td><?=$product['genero']?></td>
@@ -60,6 +60,7 @@ require_once('inc/api_functions.php')
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
+                <th>Endereço</th>
                 <th>Criação</th>
             </tr>
             <?php $results = api_request('get_all_clients', 'GET');?>
@@ -68,7 +69,8 @@ require_once('inc/api_functions.php')
                 <td><?=$client['id_client']?></td>
                 <td><?=$client['name']?></td>
                 <td><?=$client['email']?></td>
-                <td><?=$client['tel']?></td>
+                <td><?=$client['phone']?></td>
+                <td><?=$client['adress']?></td>
                 <td><?=$client['created_at']?></td>
             </tr>
             <?php endforeach; ?>

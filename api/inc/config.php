@@ -1,4 +1,5 @@
 <?php
+
 define('DB_SERVER', 'localhost');
 define('DB_NAME', 'registro_livro');
 define('DB_CHARSET', 'utf8');

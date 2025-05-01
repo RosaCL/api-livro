@@ -84,7 +84,10 @@ body{
     font-size: 3rem;
     color: var(--letra);
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: center;    
+}
+h1{
+    font-family: var(--title-font);
 }
 
 .header{
